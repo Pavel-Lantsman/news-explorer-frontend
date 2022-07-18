@@ -1,0 +1,70 @@
+/*
+ * ----------------------------------------------------------------
+ * Preloader Block
+ * ----------------------------------------------------------------
+ */
+
+.preloader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 228px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Spinner Element
+ * ----------------------------------------------------------------
+ */
+
+.preloader__spinner {
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  border: 1px solid transparent;
+  border-radius: 100%;
+  background:
+    linear-gradient(
+      rgb(245, 246, 247),
+      rgb(245, 246, 247)
+    ) content-box,
+    conic-gradient(
+      from 90deg at 50% 50%,
+      rgba(245, 246, 247, 1) 0%,
+      rgba(26, 27, 34, 1) 100%
+    ) border-box;
+  width: 74px;
+  height: 74px;
+  animation: spin 1s linear infinite;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Description Element
+ * ----------------------------------------------------------------
+ */
+
+.preloader__description {
+  margin: 0;
+  text-align: center;
+  line-height: 24px;
+  color: rgb(182, 188, 191);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Keyframes
+ * ----------------------------------------------------------------
+ */
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

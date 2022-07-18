@@ -1,0 +1,56 @@
+/*
+ * ----------------------------------------------------------------
+ * Not Found Block
+ * ----------------------------------------------------------------
+ */
+
+.not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 228px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Image Element
+ * ----------------------------------------------------------------
+ */
+
+.not-found__image {
+  margin-bottom: 24px;
+  width: 96px;
+  height: 96px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Title Element
+ * ----------------------------------------------------------------
+ */
+
+.not-found__title {
+  margin: 0 0 16px;
+  text-align: center;
+  line-height: 30px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: normal;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Description Element
+ * ----------------------------------------------------------------
+ */
+
+.not-found__description {
+  margin: 0;
+  text-align: center;
+  line-height: 24px;
+  color: rgb(182, 188, 191);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}

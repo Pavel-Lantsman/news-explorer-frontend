@@ -1,0 +1,362 @@
+/*
+ * ----------------------------------------------------------------
+ * Navigation Block
+ * ----------------------------------------------------------------
+ */
+
+.navigation {
+  position: relative;
+  z-index: 200;
+  box-shadow: inset 0 -1px 0 rgb(209, 210, 214);
+}
+
+@media (max-width: 640px) {
+  .navigation:before {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: all .25s linear;
+    visibility: hidden;
+    opacity: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, .5);
+    width: 100%;
+    height: 100%;
+    content: '';
+    pointer-events: none;
+  }
+
+  .navigation_darken-screen:before {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+.navigation_inverted {
+  box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .2);
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Container Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__container {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: 'logo links';
+  grid-template-columns: min-content auto;
+  align-items: center;
+  justify-content: space-between;
+  transition: all .25s linear;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1232px;
+  min-height: 80px;
+}
+
+@media (max-width: 1024px) {
+  .navigation__container {
+    padding: 0 40px;
+    width: 100%;
+    min-height: 66px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation__container {
+    grid-template-areas: 'logo button';
+    padding: 0 16px;
+    min-height: 56px;
+  }
+
+  .navigation__container_filled {
+    box-shadow: inset 0 -1px 0 rgba(255, 255, 255, .2);
+    background-color: rgb(26, 27, 34);
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * App Name Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__app-name {
+  position: relative;
+  grid-area: logo;
+  text-decoration: none;
+  line-height: 24px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+@media (max-width: 640px) {
+  .navigation__app-name {
+    font-size: 16px;
+  }
+}
+
+.navigation__app-name:after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: bottom right;
+  transition: transform .25s linear;
+  background-color: rgb(26, 27, 34);
+  width: 100%;
+  height: 2px;
+  content: '';
+}
+
+.navigation__app-name:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.navigation__app-name_inverted {
+  color: rgb(255, 255, 255);
+}
+
+.navigation__app-name_inverted:after {
+  background-color: rgb(255, 255, 255);
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Menu Button Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__menu-button {
+  display: none;
+  grid-area: button;
+}
+
+@media (max-width: 640px) {
+  .navigation__menu-button {
+    display: initial;
+    border: none;
+    background-color: transparent;
+    background-image: url('../../images/menu-black-icon.svg');
+    background-size: cover;
+    cursor: pointer;
+    padding: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .navigation__menu-button_inverted {
+    background-image: url('../../images/menu-white-icon.svg');
+  }
+
+  .navigation__menu-button_active {
+    background-image: url('../../images/close-icon.svg');
+  }
+}
+
+
+/*
+ * ----------------------------------------------------------------
+ * Menu Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__menu {
+  box-sizing: border-box;
+  display: flex;
+  grid-area: links;
+  align-self: stretch;
+  transition: all .25s linear;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (max-width: 640px) {
+  .navigation__menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    flex-direction: column;
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 0 0 16px 16px;
+    background-color: rgb(26, 27, 34);
+    padding: 16px 16px 24px 16px;
+    width: 100%;
+    pointer-events: none;
+  }
+
+  .navigation__menu_visible {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Menu Link Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__menu-link {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  transition: all .25s linear;
+  padding: 0 24px;
+  min-height: 100%;
+  text-decoration: none;
+  line-height: 24px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .navigation__menu-link {
+    padding: 0 16px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation__menu-link {
+    padding: 0;
+    line-height: 56px;
+    font-size: 18px;
+  }
+}
+
+.navigation__menu-link:hover {
+  color: rgb(26, 27, 34);
+}
+
+.navigation__menu-link_active {
+  border-bottom: 3px solid rgb(26, 27, 34);
+  color: rgb(26, 27, 34);
+}
+
+@media (max-width: 640px) {
+  .navigation__menu-link_active {
+    border: none;
+  }
+}
+
+.navigation__menu-link_inverted {
+  color: rgb(182, 188, 191);
+}
+
+.navigation__menu-link_inverted:hover {
+  color: rgb(255, 255, 255);
+}
+
+.navigation__menu-link_inverted.navigation__menu-link_active {
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+
+/*
+ * ----------------------------------------------------------------
+ * User Button Container Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__user-button-container {
+  display: flex;
+  align-items: center;
+  margin-left: 32px;
+}
+
+@media (max-width: 1024px) {
+  .navigation__user-button-container {
+    margin-left: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation__user-button-container {
+    margin: 22px 0 0;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * User Button Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__user-button {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  max-width: 176px;
+}
+
+@media (max-width: 1024px) {
+  .navigation__user-button {
+    max-width: 152px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation__user-button {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.navigation__user-button_wide {
+  width: 176px;
+}
+
+@media (max-width: 1024px) {
+  .navigation__user-button_wide {
+    width: 152px;
+  }
+}
+
+@media (max-width: 640px) {
+  .navigation__user-button_wide {
+    width: 100%;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * User Button Text Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__user-button-text {
+  max-width: calc(100% - 36px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * User Button Icon Element
+ * ----------------------------------------------------------------
+ */
+
+.navigation__user-button-icon {
+  background-image: url('../../images/logout-black-icon.svg');
+  background-size: cover;
+  width: 24px;
+  height: 24px;
+}
+
+.navigation__user-button-icon_inverted {
+  background-image: url('../../images/logout-white-icon.svg');
+}

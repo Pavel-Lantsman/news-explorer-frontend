@@ -1,0 +1,154 @@
+/*
+ * ----------------------------------------------------------------
+ * Title Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__title {
+  margin: 0 0 22px;
+  line-height: 28px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+@media (max-width: 640px) {
+  .popup-with-form__title {
+    margin-bottom: 18px;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Input Group Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__input-group {
+  display: block;
+  margin-bottom: 16px;
+  min-height: 65px;
+}
+
+.popup-with-form__input-group:last-of-type {
+  margin-bottom: 24px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Input Label Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__input-label {
+  display: block;
+  margin-bottom: 8px;
+  line-height: 15px;
+  color: rgb(47, 113, 229);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Input Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__input {
+  display: block;
+  transition: all .25s linear;
+  margin-bottom: 3px;
+  border: none;
+  border-bottom: 1px solid rgba(0, 0, 0, .2);
+  padding: 0 0 10px;
+  width: 100%;
+  color: rgb(26, 27, 34);
+  line-height: 17px;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+.popup-with-form__input:focus {
+  outline: none;
+  border-color: rgb(0, 0, 0);
+}
+
+.popup-with-form__input::placeholder {
+  color: rgba(26, 27, 34, .2);
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Error Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__error {
+  margin: 0;
+  line-height: 15px;
+  color: rgb(255, 0, 0);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+.popup-with-form__error_general {
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Submit Button Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__submit-button {
+  margin-bottom: 16px;
+  width: 100%;
+  min-height: 64px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * More Options Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__more-options {
+  margin: 0;
+  text-align: center;
+  line-height: 17px;
+  color: rgb(26, 27, 34);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Switch Button Element
+ * ----------------------------------------------------------------
+ */
+
+.popup-with-form__switch-button {
+  transition: all .25s linear;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  line-height: 17px;
+  color: rgb(47, 113, 229);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+
+}
+
+.popup-with-form__switch-button:hover {
+  opacity: .65;
+}
