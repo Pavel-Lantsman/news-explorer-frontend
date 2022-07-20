@@ -1,0 +1,54 @@
+/*
+ * ----------------------------------------------------------------
+ * Registration Successful Popup Block
+ * ----------------------------------------------------------------
+ */
+
+.reg-successful-popup {
+  padding: 43px 36px 51px;
+}
+
+@media (max-width: 640px) {
+  .reg-successful-popup {
+    padding: 43px 16px 51px;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Title Element
+ * ----------------------------------------------------------------
+ */
+
+.reg-successful-popup__title {
+  margin: 0 0 14px;
+  max-width: 358px;
+  line-height: 28px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 24px;
+  font-weight: 900;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Switch Button Element
+ * ----------------------------------------------------------------
+ */
+
+.reg-successful-popup__switch-button {
+  transition: all .25s linear;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 0;
+  line-height: 22px;
+  color: rgb(47, 113, 229);
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+.reg-successful-popup__switch-button:hover {
+  opacity: .65;
+}

@@ -1,0 +1,132 @@
+/*
+ * ----------------------------------------------------------------
+ * Footer Block
+ * ----------------------------------------------------------------
+ */
+
+.footer {
+  box-sizing: border-box;
+  display: grid;
+  grid-template-areas: 'copyright links icons';
+  grid-template-columns: auto max-content min-content;
+  gap: 40px;
+  align-items: center;
+  margin: 0 auto;
+  width: 90%;
+  max-width: 1232px;
+  min-height: 80px;
+}
+
+@media (max-width: 1024px) {
+  .footer {
+    gap: 24px;
+    padding: 0 40px;
+    width: 100%;
+    min-height: 64px;
+  }
+}
+
+@media (max-width: 740px) {
+  .footer {
+    grid-template-areas:
+      'links icons'
+      'copyright copyright';
+    grid-template-columns: auto min-content;
+    gap: 38px 16px;
+    padding: 20px 16px 22px;
+    min-height: auto;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Copyright Element
+ * ----------------------------------------------------------------
+ */
+
+.footer__copyright {
+  grid-area: copyright;
+  margin: 0;
+  line-height: 22px;
+  color: rgb(182, 188, 191);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * List Element
+ * ----------------------------------------------------------------
+ */
+
+.footer__list {
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer__list_type_links {
+  grid-area: links;
+}
+
+@media (max-width: 740px) {
+  .footer__list_type_links {
+    flex-direction: column;
+    gap: 0;
+  }
+}
+
+.footer__list_type_icons {
+  grid-area: icons;
+}
+
+@media (max-width: 740px) {
+  .footer__list_type_icons {
+    align-self: flex-start;
+  }
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Link Element
+ * ----------------------------------------------------------------
+ */
+
+.footer__link {
+  transition: all .25s linear;
+  text-decoration: none;
+  line-height: 24px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+@media (max-width: 740px) {
+  .footer__link {
+    line-height: 48px;
+  }
+}
+
+.footer__link:hover {
+  opacity: .65;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Icon Element
+ * ----------------------------------------------------------------
+ */
+
+.footer__icon {
+  transition: all .25s linear;
+  width: 24px;
+  height: 24px;
+}
+
+.footer__icon:hover {
+  opacity: .65;
+}

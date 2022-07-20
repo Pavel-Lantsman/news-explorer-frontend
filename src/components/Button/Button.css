@@ -1,0 +1,101 @@
+/*
+ * ----------------------------------------------------------------
+ * Button Block
+ * ----------------------------------------------------------------
+ */
+
+.button {
+  box-sizing: border-box;
+  transition: all .25s linear;
+  border: none;
+  cursor: pointer;
+  padding: 20px 56px;
+  line-height: 24px;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+@media (max-width: 1024px) {
+  .button {
+    padding: 16px 52px;
+  }
+}
+
+.button_primary {
+  border-radius: 100px;
+  box-shadow: 0 5px 15px rgba(14, 26, 57, .2);
+  background-color: rgb(47, 113, 229);
+  color: rgb(255, 255, 255);
+}
+
+.button_primary:hover {
+  background-color: rgb(52, 126, 255);
+}
+
+.button_primary:active {
+  background-color: rgb(42, 101, 204);
+}
+
+.button_primary:disabled {
+  box-shadow: none;
+  background-color: rgb(230, 232, 235);
+  cursor: not-allowed;
+  color: rgb(182, 188, 191);
+}
+
+.button_secondary {
+  border-radius: 80px;
+  background-color: rgb(255, 255, 255);
+  color: rgb(26, 27, 34);
+}
+
+.button_secondary:hover {
+  background-color: rgb(232, 232, 232);
+}
+
+.button_secondary:active {
+  background-color: rgb(190, 190, 190);
+}
+
+.button_outlined-light,
+.button_outlined-dark {
+  border: 1px solid;
+  border-radius: 100px;
+  background-color: transparent;
+  padding: 12px 18px;
+}
+
+@media (max-width: 1024px) {
+  .button_outlined-light,
+  .button_outlined-dark {
+    padding: 8px 15px;
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .button_outlined-light,
+  .button_outlined-dark {
+    padding: 16px;
+    font-size: 18px;
+  }
+}
+
+.button_outlined-light {
+  border-color: rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
+}
+
+.button_outlined-light:hover {
+  border-color: rgb(188, 188, 188);
+}
+
+.button_outlined-dark {
+  border-color: rgb(209, 210, 214);
+  color: rgb(26, 27, 34);
+}
+
+.button_outlined-dark:hover {
+  border-color: rgb(26, 27, 34);
+}
