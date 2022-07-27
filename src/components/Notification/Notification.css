@@ -1,0 +1,55 @@
+/*
+ * ----------------------------------------------------------------
+ * Notification Block
+ * ----------------------------------------------------------------
+ */
+
+.notification {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  gap: 16px;
+  align-items: center;
+  transform: scale(.75);
+  transition: all .25s linear;
+  opacity: 0;
+  z-index: 400;
+  margin: 16px;
+  border-radius: 8px;
+  background-color: rgb(255, 0, 0);
+  padding: 8px 16px;
+  pointer-events: none;
+}
+
+.notification_visible {
+  transform: scale(1);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Image Element
+ * ----------------------------------------------------------------
+ */
+
+.notification__image {
+  width: 32px;
+  height: 32px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Description Element
+ * ----------------------------------------------------------------
+ */
+
+.notification__description {
+  margin: 0;
+  line-height: 18px;
+  color: rgb(255, 255, 255);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+}

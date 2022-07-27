@@ -11,7 +11,7 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.3.0",
-    "react-scripts": "5.0.1",
+    "react-scripts": "^5.0.1",
     "web-vitals": "^2.1.4"
   },
   "devDependencies": {
@@ -25,6 +25,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "npm run build && scp -r -i C:/Users/Pavel/Desktop/Practicum100/Final_Project/myVM_key.pem ./build/* azureuser@pavel22lantsman.news-explorer.students.nomoredomainssbs.ru:/home/azureuser/news-explorer-frontend",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },

@@ -1,0 +1,43 @@
+/*
+ * ----------------------------------------------------------------
+ * Results Error Block
+ * ----------------------------------------------------------------
+ */
+
+.results-error {
+  display: flex;
+  flex-direction: column;
+  max-width: 228px;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Title Element
+ * ----------------------------------------------------------------
+ */
+
+.results-error__title {
+  margin: 0 0 16px;
+  text-align: center;
+  line-height: 30px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto Slab', Arial, Helvetica, sans-serif;
+  font-size: 26px;
+  font-weight: normal;
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Description Element
+ * ----------------------------------------------------------------
+ */
+
+.results-error__description {
+  margin: 0;
+  text-align: center;
+  line-height: 24px;
+  color: rgb(182, 188, 191);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  font-weight: normal;
+}
