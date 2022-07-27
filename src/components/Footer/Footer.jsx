@@ -23,7 +23,7 @@ const Footer = () => (
 
       <li>
         <a
-          href="https://practicum.com/"
+          href="https://practicum.com"
           target="_blank"
           rel="noreferrer"
           className="footer__link"

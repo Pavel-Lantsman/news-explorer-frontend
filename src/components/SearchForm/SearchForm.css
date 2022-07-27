@@ -5,6 +5,7 @@
  */
 
 .search-form {
+  position: relative;
   display: flex;
   border-radius: 100px;
   box-shadow: inset 0 0 0 1px rgb(209, 210, 214);
@@ -58,4 +59,61 @@
 
 .search-form__input::placeholder {
   color: rgb(182, 188, 191);
+}
+
+/*
+ * ----------------------------------------------------------------
+ * Input Error Element
+ * ----------------------------------------------------------------
+ */
+
+.search-form__input-error {
+  position: absolute;
+  top: 125%;
+  left: 5%;
+  transform: translateY(-5px);
+  transition: all .25s linear;
+  opacity: 0;
+  margin: 0;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, .25);
+  background-color: rgb(255, 255, 255);
+  padding: 12px 24px;
+  line-height: 12px;
+  color: rgb(26, 27, 34);
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  font-weight: normal;
+}
+
+@media (max-width: 640px) {
+  .search-form__input-error {
+    top: unset;
+    bottom: 115%;
+    transform: translateY(5px);
+  }
+}
+
+.search-form__input-error:before {
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 8px);
+  background-color: rgb(255, 255, 255);
+  width: 16px;
+  height: 8px;
+  content: '';
+  clip-path: polygon(50% 0, 0 100%, 100% 100%);
+}
+
+@media (max-width: 640px) {
+  .search-form__input-error:before {
+    top: unset;
+    bottom: -8px;
+    clip-path: polygon(0 0, 100% 0, 50% 100%);
+  }
+}
+
+.search-form__input-error_visible {
+  transform: translateY(0);
+  opacity: 1;
 }

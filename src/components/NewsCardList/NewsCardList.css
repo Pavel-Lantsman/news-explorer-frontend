@@ -8,6 +8,10 @@
   background-color: rgb(245, 246, 247);
 }
 
+.news-card-list_hidden {
+  display: none;
+}
+
 /*
  * ----------------------------------------------------------------
  * Container Element

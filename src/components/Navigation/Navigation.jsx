@@ -1,4 +1,4 @@
-import React, { useState, useContext, useRef, useEffect } from 'react';
+import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import classNames from 'classnames';
 import Button from '../Button/Button';
@@ -10,11 +10,11 @@ const Navigation = ({
   onSignOutClick = () => {},
   isInverted = false,
 }) => {
-  const containerRef = useRef(null);
+  const containerRef = React.useRef(null);
 
-  const currentUser = useContext(CurrentUserContext);
+  const currentUser = React.useContext(CurrentUserContext);
 
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = React.useState(false);
 
   const toggleMenu = () => setIsVisible(!isVisible);
 
@@ -31,7 +31,7 @@ const Navigation = ({
     }
   };
 
-  useEffect(() => {
+  React.useEffect(() => {
     if (isVisible) {
       window.addEventListener('resize', handleResizeEvent);
       document.addEventListener('click', handleClickEvent);

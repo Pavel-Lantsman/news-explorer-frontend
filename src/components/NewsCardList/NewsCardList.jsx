@@ -1,5 +1,7 @@
 import React from 'react';
+import classNames from 'classnames';
 import Preloader from '../Preloader/Preloader';
+import ResultsError from '../ResultsError/ResultsError';
 import NotFound from '../NotFound/NotFound';
 import NewsCard from '../NewsCard/NewsCard';
 import Button from '../Button/Button';
@@ -7,12 +9,22 @@ import './NewsCardList.css';
 
 const NewsCardList = ({
   data,
-  isLoading,
+  savedArticles = {},
+  isVisible = true,
+  isLoading = false,
+  isError = false,
   isSearchResults = false,
-  onSignInClick = () => {},
-  onLoadMoreClick = () => {},
+  onSignUpClick = () => {},
+  onBookmarkClick = () => {},
+  onRemoveClick = () => {},
+  onLoadMoreClick = undefined,
 }) => (
-  <section className="news-card-list">
+  <section
+    className={classNames(
+      'news-card-list',
+      !isVisible && 'news-card-list_hidden',
+    )}
+  >
     <div className="news-card-list__container">
       {isLoading && (
         <Preloader>
@@ -24,7 +36,15 @@ const NewsCardList = ({
         </Preloader>
       )}
 
-      {!isLoading && data.length === 0 && (
+      {!isLoading && isError && (
+        <ResultsError>
+          Sorry, something went wrong during the request.
+          There may be a connection issue or the server may be down.
+          Please try again later.
+        </ResultsError>
+      )}
+
+      {!isLoading && !isError && data.length === 0 && (
         <NotFound>
           {
             isSearchResults
@@ -34,7 +54,7 @@ const NewsCardList = ({
         </NotFound>
       )}
 
-      {!isLoading && data.length > 0 && (
+      {!isLoading && !isError && data.length > 0 && (
         <>
           {isSearchResults && (
             <h2 className="news-card-list__title">
@@ -45,15 +65,22 @@ const NewsCardList = ({
           <ul className="news-card-list__list">
             {data.map((cardData) => (
               <NewsCard
-                key={cardData.id}
-                cardData={cardData}
+                key={
+                  isSearchResults
+                    ? cardData.link
+                    : cardData._id
+                }
+                data={cardData}
+                savedArticles={savedArticles}
                 isSearchResults={isSearchResults}
-                onSignInClick={onSignInClick}
+                onSignUpClick={onSignUpClick}
+                onBookmarkClick={onBookmarkClick}
+                onRemoveClick={onRemoveClick}
               />
             ))}
           </ul>
 
-          {isSearchResults && (
+          {onLoadMoreClick && (
             <Button
               type="button"
               pattern="secondary"
